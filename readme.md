@@ -1,3 +1,1 @@
-in memory object that will contain the state of the room
-
-abstract classes : An abstract class in object-oriented programming (OOP) is a class that cannot be instantiated, meaning you cannot create objects directly from it. It serves as a blueprint for other classes, defining common behaviors and properties that can be inherited. Abstract classes often contain abstract methods, which are methods declared but not implemented within the abstract class itself; these methods must be implemented by subclasses. 
+# Twilet

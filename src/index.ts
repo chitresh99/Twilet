@@ -1,7 +1,8 @@
 import {server as WebSocketServer} from "websocket"
 import http from 'http'
+import { UserManager } from "./UserManager";
 
-var server = http.createServer(function(request:any, response:any) {
+const server = http.createServer(function(request:any, response:any) {
     console.log((new Date()) + ' Received request for ' + request.url);
     response.writeHead(404);
     response.end();
@@ -36,16 +37,19 @@ wsServer.on('request', function(request) {
     var connection = request.accept('echo-protocol', request.origin);
     console.log((new Date()) + ' Connection accepted.');
     connection.on('message', function(message) {
-        if (message.type === 'utf8') {
-            console.log('Received Message: ' + message.utf8Data);
-            connection.sendUTF(message.utf8Data);
+        if(message.type === 'utf8'){
+        try {
+          messageHandler(JSON.parse(message.utf8Data));
+        }catch(e){
+
         }
-        else if (message.type === 'binary') {
-            console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
-            connection.sendBytes(message.binaryData);
         }
     });
     connection.on('close', function(reasonCode, description) {
         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     });
 });
+
+function messageHandler(message:Message){
+
+}
