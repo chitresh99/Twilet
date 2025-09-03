@@ -1,16 +1,17 @@
 {
-  "name": "real-time-chat",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "twilet",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "peerDependencies": {
+    "typescript": "^5"
+  },
   "dependencies": {
-    "@types/websocket": "^1.0.10",
-    "websocket": "^1.0.35"
+    "@types/ws": "^8.18.1",
+    "uuid": "^11.1.0",
+    "ws": "^8.18.3"
   }
 }
