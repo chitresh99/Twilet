@@ -1,4 +1,4 @@
-import type { Client } from '../types/client.js';
+import type { Client } from '../types/client.ts';
 
 export class ClientManager {
   private clients: Map<string, Client> = new Map();
